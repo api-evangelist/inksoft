@@ -1,0 +1,38 @@
+aid: inksoft
+name: InkSoft FinOps
+description: >-
+  Cost model for building on InkSoft. InkSoft bills as a flat monthly SaaS
+  subscription per store rather than metered, per-request API pricing, so API
+  cost is bundled into the store license plus an API add-on fee.
+model: subscription
+currency: USD
+dimensions:
+  - name: Store subscription
+    basis: per store, per month
+    note: >-
+      Monthly InkSoft plan for the hosted online store and Design Studio.
+      InkSoft lists pricing "starting at $299/month"; third-party aggregators
+      report roughly $314/month (Standard) and $419/month (Unlimited).
+  - name: API access add-on
+    basis: per month
+    note: >-
+      InkSoft API 2 access requires an Unlimited license and is subject to an
+      additional monthly fee. The exact add-on amount is not published and is
+      quoted by InkSoft sales.
+  - name: Payment processing / transaction fees
+    basis: per transaction (external)
+    note: >-
+      Storefront orders incur payment-gateway and any InkSoft/Inktavo commerce
+      fees separate from the software subscription; these are configured per
+      store and not part of the API surface.
+metered: false
+notes: >-
+  There is no per-call or per-token API metering documented. FinOps for InkSoft
+  is dominated by the fixed monthly store subscription and the API add-on fee;
+  optimization is about right-sizing the plan rather than tuning API call
+  volume. Confirm current figures and the API add-on with InkSoft sales
+  (1-844-201-3595).
+sources:
+  - https://www.inksoft.com/inksoft-pricing-plans/
+  - https://help.inksoft.com/hc/en-us/categories/8146540560795-InkSoft-API
+  - https://valuecore.ai/valuehub/organizations/inksoft/pricing

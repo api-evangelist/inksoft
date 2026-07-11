@@ -1,0 +1,22 @@
+aid: inksoft
+name: InkSoft Rate Limits
+description: >-
+  InkSoft does not publish specific numeric rate limits for the InkSoft API 2 in
+  its public documentation. The values below are not asserted as fact; they note
+  what is and is not documented as of the review date.
+documented: false
+published:
+  requestsPerSecond: null
+  requestsPerMinute: null
+  requestsPerDay: null
+notes: >-
+  The InkSoft API 2 is a per-store HTTP API enabled under an Unlimited license
+  with an additional monthly fee. InkSoft markets the Unlimited plan as offering
+  "unlimited" bandwidth, storage, and order volume for the store subscription,
+  but this is a commercial/plan statement, not a documented per-endpoint API
+  throttle. No concrete API rate-limit numbers, quota headers, or 429 behavior
+  are published. Integrators should implement conservative client-side rate
+  limiting and retries, and confirm any operational limits with InkSoft support.
+sources:
+  - https://help.inksoft.com/hc/en-us/articles/46724035939739-InkSoft-API-2
+  - https://demo.inksoft.com/demo?Page=Api2

@@ -1,0 +1,102 @@
+aid: inksoft
+name: InkSoft
+review:
+  question: Does InkSoft expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-11'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. InkSoft's documented developer surface,
+    the InkSoft API 2, is a per-store RPC-style HTTP API returning XML or JSON
+    with CORS support. It is entirely request/response; there is no server-push
+    transport (WebSocket or SSE) documented on InkSoft's own API to model.
+findings:
+  summary: |
+    InkSoft does not publish a documented public WebSocket API. InkSoft is a
+    custom-apparel e-commerce, online store, and browser-based Design Studio
+    platform for print shops (part of the Inktavo family with Printful and
+    GraphicsFlow). Its developer surface is the InkSoft API 2, described as
+    having predictable, resource-oriented URLs that return data as XML or JSON
+    and support cross-origin resource sharing (CORS) for client-side web apps.
+    API 2 is scoped to an individual web store under a per-store path (for
+    example stores.inksoft.com/{StoreName}/Api2/) and is exposed/configured from
+    the Manage Web Stores admin area. All documented interaction is
+    request/response HTTP. No realtime, bidirectional, or streaming WebSocket
+    (ws:// or wss://) endpoint is documented anywhere on InkSoft's own API as of
+    the review date.
+  accessModel: |
+    The InkSoft API 2 reference is publicly viewable (a live reference runs at
+    demo.inksoft.com/demo?Page=Api2, with help-center articles and a GitHub
+    sample-code repo and wiki at github.com/InkSoft/api). Production use is
+    account/license-gated: InkSoft states that API access requires an InkSoft
+    Unlimited license and is subject to an additional monthly fee, and the API is
+    turned on per store from the admin portal. There is no self-service developer
+    signup independent of an InkSoft store subscription.
+  transports:
+    - protocol: REST/RPC
+      scheme: https
+      baseURL: https://stores.inksoft.com/{StoreName}/Api2
+      documented: true
+      note: >-
+        Per-store InkSoft API 2. Resource-oriented, method-named HTTP calls
+        (for example GetProductCategoryList, GetStoreDesignList, GetCart,
+        SaveCartOrder, CreateUser) returning XML or JSON with CORS. A live
+        reference is served at demo.inksoft.com/demo?Page=Api2.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in the InkSoft API 2 reference as of the review date.
+  methodsDocumented:
+    endpointsModeled: true
+    note: >-
+      The following method names are drawn from InkSoft's public wiki and API 2
+      reference. Exact request paths, parameters, and payloads beyond these names
+      are modeled, since InkSoft does not publish a formal OpenAPI definition.
+    products:
+      - GetProductCategoryList
+      - GetProductList
+    designs:
+      - GetStoreDesignCategoryList
+      - GetStoreDesignList
+      - GetUserDesignList
+    art:
+      - GetArtCategoryList
+      - GetArtList
+    cart:
+      - GetCart
+      - SaveCartItemNotes
+      - SaveCartShippingAddress
+      - SaveCartBillingAddress
+      - GetCartShippingAddresses
+      - GetCartShippingMethods
+      - GetCartPaymentMethods
+      - SaveCartOrder
+    users:
+      - CreateUser
+sources:
+  - url: https://help.inksoft.com/hc/en-us/articles/46724035939739-InkSoft-API-2
+    type: Documentation
+    note: InkSoft API 2 overview - resource-oriented URLs, XML/JSON, CORS, accessed via the admin portal.
+  - url: https://demo.inksoft.com/demo?Page=Api2
+    type: APIReference
+    note: Live InkSoft API 2 reference on the demo store.
+  - url: https://github.com/InkSoft/api
+    type: SourceCode
+    note: InkSoft sample code (JavaScript, Handlebars) and wiki for implementing the API.
+  - url: https://github.com/InkSoft/api/wiki
+    type: Documentation
+    note: >-
+      Wiki pages document design/art/product/cart/SSO method names
+      (GetStoreDesignList, GetArtList, GetCart, SaveCartOrder, CreateUser, etc.).
+  - url: https://www.inksoft.com/inksoft-api-guide/
+    type: Documentation
+    note: InkSoft API guide announcement; API access requires an Unlimited license plus an additional monthly fee.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists. InkSoft's own public API (InkSoft
+    API 2) is a per-store, request/response HTTP API returning XML or JSON. No
+    AsyncAPI document was created because there is no server-push transport on
+    InkSoft's API to model.

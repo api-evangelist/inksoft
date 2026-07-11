@@ -1,0 +1,138 @@
+aid: inksoft
+url: https://raw.githubusercontent.com/api-evangelist/inksoft/refs/heads/main/apis.yml
+name: InkSoft
+kind: company
+description: InkSoft is a custom apparel e-commerce, online store, and design
+  platform for screen printers, embroiderers, and print shops - part of the
+  Inktavo family alongside Printful and GraphicsFlow. It provides hosted online
+  stores, a browser-based Design Studio, product catalogs, art/clip-art
+  libraries, and order management. InkSoft exposes a documented but
+  license-gated developer surface, the InkSoft API 2, a per-store RPC-style HTTP
+  API returning XML or JSON with CORS support. It lets partners and store owners
+  build custom storefronts, product catalog pages, design galleries, cart and
+  checkout flows, and single sign-on against a specific web store. API access
+  requires an InkSoft Unlimited license and an additional monthly fee, so the
+  reference is public but production use is account-gated.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Custom Apparel
+- E-commerce
+- Online Stores
+- Print Shop
+- Design Studio
+- Screen Printing
+- Product Catalog
+created: '2026-07-11'
+modified: '2026-07-11'
+specificationVersion: '0.19'
+apis:
+- aid: inksoft:inksoft-stores-products-api
+  name: InkSoft Stores & Products API
+  tags:
+  - Stores
+  - Products
+  - Catalog
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://demo.inksoft.com/demo?Page=Api2
+  baseURL: https://stores.inksoft.com
+  properties:
+  - url: https://help.inksoft.com/hc/en-us/articles/46724035939739-InkSoft-API-2
+    type: Documentation
+  - url: https://demo.inksoft.com/demo?Page=Api2
+    type: APIReference
+  description: >-
+    Retrieve a web store's product catalog for building custom catalog and
+    product-detail pages. Documented API 2 methods include GetProductCategoryList
+    (all categories and subcategories in a store with cover art links) and
+    product-list/product-detail calls used to render catalog pages. Requests are
+    scoped to a specific store under the per-store Api2 path (for example
+    stores.inksoft.com/{StoreName}/Api2/) and return XML or JSON. Exact request
+    paths and parameters beyond the documented method names are modeled, not
+    reproduced from a formal OpenAPI definition (endpointsModeled).
+- aid: inksoft:inksoft-designs-art-api
+  name: InkSoft Designs & Art API
+  tags:
+  - Designs
+  - Clip Art
+  - Design Studio
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://demo.inksoft.com/demo?Page=Api2
+  properties:
+  - url: https://github.com/InkSoft/api/wiki
+    type: Documentation
+  - url: https://demo.inksoft.com/demo?Page=Api2
+    type: APIReference
+  description: >-
+    Browse and search the design and clip-art libraries that back the InkSoft
+    Design Studio. Documented API 2 methods include GetStoreDesignCategoryList,
+    GetStoreDesignList (designs in a category or matching a search term),
+    GetUserDesignList (a user's saved designs by UserID), GetArtCategoryList, and
+    GetArtList (clip art by category, user, or search term). Selected design_id
+    and art_id values are handed to the Design Studio to load artwork. Beyond the
+    documented method names, request paths and parameters are modeled
+    (endpointsModeled), as no formal OpenAPI definition is published.
+- aid: inksoft:inksoft-cart-orders-api
+  name: InkSoft Cart & Orders API
+  tags:
+  - Cart
+  - Orders
+  - Checkout
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://demo.inksoft.com/demo?Page=Api2
+  properties:
+  - url: https://github.com/InkSoft/api/wiki
+    type: Documentation
+  - url: https://demo.inksoft.com/demo?Page=Api2
+    type: APIReference
+  description: >-
+    Drive an external cart and checkout flow against an InkSoft store.
+    Documented API 2 methods include GetCart (cart contents with designs,
+    product images, styles, sizes, and pricing), SaveCartItemNotes,
+    SaveCartShippingAddress, SaveCartBillingAddress, GetCartShippingAddresses,
+    GetCartShippingMethods, GetCartPaymentMethods, and SaveCartOrder (place the
+    order given a payment type and cart total). Request paths and parameters
+    beyond the documented method names are modeled (endpointsModeled); there is
+    no published OpenAPI definition.
+- aid: inksoft:inksoft-users-sso-api
+  name: InkSoft Users & SSO API
+  tags:
+  - Users
+  - Single Sign On
+  - Accounts
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://github.com/InkSoft/api/wiki
+  properties:
+  - url: https://github.com/InkSoft/api/wiki
+    type: Documentation
+  - url: https://demo.inksoft.com/demo?Page=Api2
+    type: APIReference
+  description: >-
+    Provision and link InkSoft user accounts for single sign-on. The documented
+    CreateUser method creates an InkSoft account alongside your own user record
+    and returns an InkSoft UserID, which you then pass to the Design Studio so
+    saved art and designs are attached to that account. Integrators typically
+    maintain a mapping between their own user IDs and InkSoft UserIDs. Exact
+    request paths and parameters are modeled from the documented method
+    (endpointsModeled), as no formal OpenAPI definition is published.
+common:
+- type: GitHubOrganization
+  url: https://github.com/InkSoft
+- type: LinkedIn
+  url: https://www.linkedin.com/company/inksoft
+- type: Website
+  url: https://www.inksoft.com
+- type: Documentation
+  url: https://help.inksoft.com/hc/en-us/categories/8146540560795-InkSoft-API
+- type: APIReference
+  url: https://demo.inksoft.com/demo?Page=Api2
+- type: Plans
+  url: plans/inksoft-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/inksoft-rate-limits.yml
+- type: FinOps
+  url: finops/inksoft-finops.yml
+- type: Blog
+  url: https://www.inksoft.com/blog/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

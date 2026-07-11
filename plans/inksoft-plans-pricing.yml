@@ -1,0 +1,48 @@
+aid: inksoft
+name: InkSoft Plans & Pricing
+description: >-
+  InkSoft is sold as a monthly SaaS subscription for print shops and custom
+  apparel sellers. Pricing below is grounded in InkSoft's own materials plus
+  third-party pricing aggregators; treat the exact dollar figures as
+  approximate and verify with InkSoft sales, as list prices change. Developer
+  API access is not a self-service tier: the InkSoft API 2 requires an InkSoft
+  Unlimited license and is subject to an additional monthly fee.
+currency: USD
+billingCycle: monthly
+accessModel: >-
+  API 2 is enabled per web store from the admin portal and requires an
+  InkSoft Unlimited license plus an additional monthly fee. There is no free,
+  standalone developer plan independent of an InkSoft store subscription.
+plans:
+  - name: Starting Price
+    price: 299
+    unit: per month
+    note: >-
+      InkSoft's own pricing page states plans and options "starting at $299 per
+      month." Plan names and included limits are not itemized on that page.
+    source: https://www.inksoft.com/inksoft-pricing-plans/
+  - name: Standard (third-party reported)
+    price: 314
+    unit: per month
+    note: >-
+      Reported by third-party pricing aggregators, not confirmed on InkSoft's
+      own site. Verify current pricing with InkSoft sales.
+    source: https://valuecore.ai/valuehub/organizations/inksoft/pricing
+  - name: Unlimited (third-party reported)
+    price: 419
+    unit: per month
+    note: >-
+      Reported by third-party pricing aggregators. The Unlimited license is the
+      tier required for InkSoft API 2 access (which also carries an additional
+      monthly API fee). Verify current pricing with InkSoft sales.
+    source: https://valuecore.ai/valuehub/organizations/inksoft/pricing
+notes: >-
+  InkSoft is part of the Inktavo family (with Printful and GraphicsFlow); some
+  plans, bundles, and promotional offers are quoted only through sales. Contact
+  InkSoft sales at 1-844-201-3595 for current, authoritative pricing and the
+  API add-on fee.
+sources:
+  - https://www.inksoft.com/inksoft-pricing-plans/
+  - https://www.inksoft.com/pricing-options/
+  - https://valuecore.ai/valuehub/organizations/inksoft/pricing
+  - https://help.inksoft.com/hc/en-us/categories/8146540560795-InkSoft-API
