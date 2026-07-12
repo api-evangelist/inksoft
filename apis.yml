@@ -115,6 +115,8 @@ apis:
     request paths and parameters are modeled from the documented method
     (endpointsModeled), as no formal OpenAPI definition is published.
 common:
+- type: DomainSecurity
+  url: security/inksoft-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/InkSoft
 - type: LinkedIn
