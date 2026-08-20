@@ -28,6 +28,14 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/inksoft.png
 tags:
 - Custom Apparel
+- E-Commerce
+- Online Stores
+- Print Shop
+- Design Studio
+- Screen Printing
+- Product Catalog
+tags_raw:
+- Custom Apparel
 - E-commerce
 - Online Stores
 - Print Shop
@@ -41,6 +49,10 @@ apis:
 - aid: inksoft:inksoft-stores-products-api
   name: InkSoft Stores & Products API
   tags:
+  - Stores
+  - Product
+  - Catalog
+  tags_raw:
   - Stores
   - Products
   - Catalog
@@ -87,6 +99,10 @@ apis:
   name: InkSoft Cart & Orders API
   tags:
   - Cart
+  - Order
+  - Checkout
+  tags_raw:
+  - Cart
   - Orders
   - Checkout
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
@@ -108,6 +124,10 @@ apis:
 - aid: inksoft:inksoft-users-sso-api
   name: InkSoft Users & SSO API
   tags:
+  - User
+  - Single Sign-On
+  - Account
+  tags_raw:
   - Users
   - Single Sign On
   - Accounts
