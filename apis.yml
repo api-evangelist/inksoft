@@ -13,6 +13,17 @@ description: InkSoft is a custom apparel e-commerce, online store, and design
   checkout flows, and single sign-on against a specific web store. API access
   requires an InkSoft Unlimited license and an additional monthly fee, so the
   reference is public but production use is account-gated.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: unknown
