@@ -54,7 +54,7 @@ tags_raw:
 - Screen Printing
 - Product Catalog
 created: '2026-07-11'
-modified: '2026-07-11'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: inksoft:inksoft-stores-products-api
@@ -162,6 +162,8 @@ apis:
     request paths and parameters are modeled from the documented method
     (endpointsModeled), as no formal OpenAPI definition is published.
 common:
+- url: https://www.inksoft.com/feed/
+  type: BlogRSS
 - type: DomainSecurity
   url: security/inksoft-domain-security.yml
 - type: GitHubOrganization
