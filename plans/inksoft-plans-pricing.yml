@@ -50,3 +50,31 @@ sources:
   - https://www.inksoft.com/pricing-options/
   - https://valuecore.ai/valuehub/organizations/inksoft/pricing
   - https://help.inksoft.com/hc/en-us/categories/8146540560795-InkSoft-API
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Starting Price
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Standard (third-party reported)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Unlimited (third-party reported)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
