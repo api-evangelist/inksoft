@@ -1,4 +1,4 @@
-# InkSoft (inksoft)
+# InkSoft
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,82 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-InkSoft is a custom apparel e-commerce, online store, and design platform for screen printers, embroiderers, and print shops - part of the Inktavo family alongside Printful and GraphicsFlow. It provides hosted online stores, a browser-based Design Studio, product catalogs, art and clip-art libraries, and order management.
+InkSoft is a custom apparel e-commerce, online store, and design platform for screen printers, embroiderers, and print shops - part of the Inktavo family alongside Printful and GraphicsFlow. It provides hosted online stores, a browser-based Design Studio, product catalogs, art/clip-art libraries, and order management. InkSoft exposes a documented but license-gated developer surface, the InkSoft API 2, a per-store RPC-style HTTP API returning XML or JSON with CORS support. It lets partners and store owners build custom storefronts, product catalog pages, design galleries, cart and checkout flows, and single sign-on against a specific web store. API access requires an InkSoft Unlimited license and an additional monthly fee, so the reference is public but production use is account-gated.
 
-InkSoft's developer surface is the **InkSoft API 2** - a per-store, RPC-style HTTP API with predictable, resource-oriented URLs that return data as **XML or JSON** and support **CORS** for client-side web apps. It is used to build custom storefronts, product-catalog pages, design and clip-art galleries, external cart/checkout flows, and single sign-on against a specific InkSoft web store.
+**Areas:** Custom Apparel · E-Commerce · Online Store · Print Shop · Design Studio · Screen Printing · Product Catalog
 
-## Access Model (read this first)
+## InkSoft on APIs.io
 
-The InkSoft API 2 **reference is public** - a live reference runs at [demo.inksoft.com/demo?Page=Api2](https://demo.inksoft.com/demo?Page=Api2), with help-center articles and a sample-code repo and wiki at [github.com/InkSoft/api](https://github.com/InkSoft/api). **Production use is account/license-gated**, however:
+Everything profiled for InkSoft is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/inksoft/](https://apis.io/providers/inksoft/)** — or go straight to one of the APIs or properties below.
 
-- API 2 is enabled **per store** from the Manage Web Stores area of the admin portal.
-- Access **requires an InkSoft Unlimited license** and is **subject to an additional monthly fee**.
-- There is **no self-service developer signup** independent of an InkSoft store subscription.
+### APIs (4)
 
-Because InkSoft does not publish a formal OpenAPI definition, the method names in this catalog are real (taken from InkSoft's public wiki and API 2 reference), but exact request paths, parameters, and payloads beyond those names are **modeled** (`endpointsModeled`). No OpenAPI, AsyncAPI, or Postman collection files are included, to avoid fabricating a surface InkSoft does not itself publish.
+- [InkSoft Stores & Products API](https://apis.io/apis/inksoft/inksoft-stores-products-api/) — Retrieve a web store's product catalog for building custom catalog and product-detail pages. Documented API 2 methods include GetProductCategoryList (all…
+- [InkSoft Designs & Art API](https://apis.io/apis/inksoft/inksoft-designs-art-api/) — Browse and search the design and clip-art libraries that back the InkSoft Design Studio. Documented API 2 methods include GetStoreDesignCategoryList,…
+- [InkSoft Cart & Orders API](https://apis.io/apis/inksoft/inksoft-cart-orders-api/) — Drive an external cart and checkout flow against an InkSoft store. Documented API 2 methods include GetCart (cart contents with designs, product images,…
+- [InkSoft Users & SSO API](https://apis.io/apis/inksoft/inksoft-users-sso-api/) — Provision and link InkSoft user accounts for single sign-on. The documented CreateUser method creates an InkSoft account alongside your own user record and…
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/inksoft/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/inksoft/refs/heads/main/apis.yml)
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Custom Apparel
-- E-commerce
-- Online Stores
-- Print Shop
-- Design Studio
-- Screen Printing
-- Product Catalog
+#### Security (1)
 
-## Timestamps
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Created:** 2026-07-11
-- **Modified:** 2026-07-11
+- [Inksoft Domain Security](https://apis.io/security/inksoft/inksoft-domain-security/)
 
-## APIs
+#### Plans and pricing (1)
 
-Base URL pattern (per store): `https://stores.inksoft.com/{StoreName}/Api2/`
+Published plans, tiers and prices.
 
-### InkSoft Stores & Products API
+- [Inksoft Plans Pricing](https://apis.io/plans/inksoft/inksoft-plans-pricing/)
 
-Retrieve a web store's product catalog for building custom catalog and product-detail pages. Documented API 2 methods include `GetProductCategoryList` (all categories and subcategories in a store with cover-art links) and product-list/product-detail calls used to render catalog pages. Requests are scoped to a specific store and return XML or JSON.
+#### Rate limits (1)
 
-- **Reference:** [demo.inksoft.com/demo?Page=Api2](https://demo.inksoft.com/demo?Page=Api2)
+Published request limits.
 
-### InkSoft Designs & Art API
+- [Inksoft Rate Limits](https://apis.io/rate-limits/inksoft/inksoft-rate-limits/)
 
-Browse and search the design and clip-art libraries behind the InkSoft Design Studio. Documented methods include `GetStoreDesignCategoryList`, `GetStoreDesignList`, `GetUserDesignList` (a user's saved designs by UserID), `GetArtCategoryList`, and `GetArtList`. Selected `design_id` and `art_id` values are handed to the Design Studio to load artwork.
+#### FinOps (1)
 
-- **Reference:** [github.com/InkSoft/api/wiki](https://github.com/InkSoft/api/wiki)
+What the API costs to run, by operation.
 
-### InkSoft Cart & Orders API
+- [Inksoft Finops](https://apis.io/finops/inksoft/inksoft-finops/)
 
-Drive an external cart and checkout flow against an InkSoft store. Documented methods include `GetCart`, `SaveCartItemNotes`, `SaveCartShippingAddress`, `SaveCartBillingAddress`, `GetCartShippingAddresses`, `GetCartShippingMethods`, `GetCartPaymentMethods`, and `SaveCartOrder` (place the order given a payment type and cart total).
+## Where to find this API
 
-- **Reference:** [github.com/InkSoft/api/wiki](https://github.com/InkSoft/api/wiki)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### InkSoft Users & SSO API
-
-Provision and link InkSoft user accounts for single sign-on. The documented `CreateUser` method creates an InkSoft account alongside your own user record and returns an InkSoft UserID, which you pass to the Design Studio so saved art and designs attach to that account.
-
-- **Reference:** [github.com/InkSoft/api/wiki](https://github.com/InkSoft/api/wiki)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/InkSoft)
-- [LinkedIn](https://www.linkedin.com/company/inksoft)
 - [Website](https://www.inksoft.com)
 - [Documentation](https://help.inksoft.com/hc/en-us/categories/8146540560795-InkSoft-API)
-- [API Reference](https://demo.inksoft.com/demo?Page=Api2)
-- [Plans](plans/inksoft-plans-pricing.yml)
-- [Rate Limits](rate-limits/inksoft-rate-limits.yml)
-- [Fin Ops](finops/inksoft-finops.yml)
+- [API reference](https://demo.inksoft.com/demo?Page=Api2)
 - [Blog](https://www.inksoft.com/blog/)
+- [GitHub](https://github.com/InkSoft)
 
-## WebSocket Review
+## API Evangelist rating
 
-InkSoft does **not** expose a documented public WebSocket API. The InkSoft API 2 is entirely request/response HTTP (XML/JSON over HTTPS). See [review.yml](review.yml).
+**Kin Score 8.7** — minimal · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 7.9 |
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Agent readiness 0.6** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/inksoft/](https://apis.io/providers/inksoft/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for InkSoft: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/inksoft/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
